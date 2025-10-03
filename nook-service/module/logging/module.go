@@ -33,7 +33,7 @@ func (m *LoggingModule) ModuleID() string {
 func (m *LoggingModule) Metadata() module.ModuleMetadata {
 	return module.ModuleMetadata{
 		Name:           "Logging",
-		Description:    "Log your server activity to a channel.",
+		Description:    "Log your server activity like bans, kicks, joins, leaves, etc. to a channel. ",
 		Icon:           "scroll-text",
 		Internal:       false,
 		DefaultEnabled: false,

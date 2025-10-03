@@ -34,7 +34,7 @@ func NewTicketModule(
 func (m *TicketModule) Metadata() module.ModuleMetadata {
 	return module.ModuleMetadata{
 		Name:           "Ticket",
-		Description:    "Create tickets for users to submit requests.",
+		Description:    "Add a ticket system to your server to allow users to submit requests.",
 		Icon:           "ticket",
 		Internal:       false,
 		DefaultEnabled: false,
