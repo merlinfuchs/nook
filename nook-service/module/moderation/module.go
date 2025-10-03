@@ -21,7 +21,7 @@ func (m *ModerationModule) ModuleID() string {
 func (m *ModerationModule) Metadata() module.ModuleMetadata {
 	return module.ModuleMetadata{
 		Name:           "Moderation",
-		Description:    "Moderate your server with ease.",
+		Description:    "Moderate your server with ease like banning, kicking, muting, etc.",
 		Icon:           "shield",
 		Internal:       false,
 		DefaultEnabled: false,
