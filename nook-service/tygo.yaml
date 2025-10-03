@@ -1,0 +1,51 @@
+type_mappings:
+  null.String: "null | string"
+  null.Bool: "null | boolean"
+  null.Float: "null | number"
+  null.Int: "null | number"
+  uuid.UUID: "string /* uuid */"
+  uuid.NullUUID: "null | string /* uuid */"
+  time.Time: "string /* RFC3339 */"
+  null.Time: "null | string /* RFC3339 */"
+  json.RawMessage: "Record<string, any> | null"
+  Base64: "string"
+  common.ID: "string /* Snowflake */"
+  snowflake.ID: "string /* Snowflake */"
+  discord.ChannelType: "number /* discord.ChannelType */"
+  discord.Permissions: "string /* discord.Permissions */"
+  module.ModuleMetadata: "ModuleMetadata"
+  module.ConfigUISchema: "ConfigUISchema"
+  user.UserWire: "UserWire"
+
+packages:
+  - path: "github.com/merlinfuchs/nook/nook-service/module"
+    output_path: "../nook-web/src/lib/types/module.gen.ts"
+    exclude_files:
+      - "context.go"
+      - "event.go"
+      - "router.go"
+    frontmatter: |
+      /* eslint @typescript-eslint/no-unused-vars: 0 */
+      /* eslint @typescript-eslint/no-unnecessary-type-constraint: 0 */
+  - path: "github.com/merlinfuchs/nook/nook-service/module/billing"
+    output_path: "../nook-web/src/lib/types/billing.gen.ts"
+    exclude_files:
+      - "module.go"
+      - "webhook.go"
+  - path: "github.com/merlinfuchs/nook/nook-service/module/manage"
+    output_path: "../nook-web/src/lib/types/manage.gen.ts"
+    exclude_files:
+      - "module.go"
+    frontmatter: |
+      import { ModuleMetadata } from "./module.gen";
+  - path: "github.com/merlinfuchs/nook/nook-service/module/guild"
+    output_path: "../nook-web/src/lib/types/guild.gen.ts"
+    exclude_files:
+      - "module.go"
+      - "api.go"
+    frontmatter: |
+      import { UserWire } from "./user.gen";
+  - path: "github.com/merlinfuchs/nook/nook-service/module/user"
+    output_path: "../nook-web/src/lib/types/user.gen.ts"
+    exclude_files:
+      - "module.go"
